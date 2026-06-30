@@ -6,10 +6,11 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
-@EntityListeners(AuditingEntityListener.class)
 
 @Entity
-@Table(name="customer")
+@EntityListeners(AuditingEntityListener.class)
+
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +28,7 @@ public class Customer {
     @Column(name="is_active",nullable = false)
     private Boolean isActive = true;
     @CreatedDate
-    @Column(name="created_at",nullable = false,updatable = false)
+    @Column(name="created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
     @LastModifiedDate
     @Column(name="updated_at",nullable = false)
@@ -36,13 +37,12 @@ public class Customer {
     public Customer(){
 
     }
-    public Customer(String customerNumber, String customerName, LocalDateTime customerRegDate, Boolean isActive, LocalDateTime createdAt,LocalDateTime updatedAt){
+    public Customer(String customerNumber, String customerName, LocalDateTime customerRegDate, Boolean isActive){
         this.customerNumber = customerNumber;
         this.customerName = customerName;
         this.customerRegDate = customerRegDate;
         this.isActive = isActive;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+
     }
 
     public Long getId() {

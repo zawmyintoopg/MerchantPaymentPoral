@@ -3,7 +3,6 @@ package com.merchant_payment_portal.payment.service;
 import com.merchant_payment_portal.payment.entity.Customer;
 import com.merchant_payment_portal.payment.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
